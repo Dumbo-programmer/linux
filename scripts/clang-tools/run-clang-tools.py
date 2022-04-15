@@ -20,7 +20,7 @@ import sys
 def parse_arguments():
     """Set up and parses command-line arguments.
     Returns:
-        args: Dict of parsed args
+        args: Dict of parsed arguments
         Has keys: [path, type]
     """
     usage = """Run clang-tidy or the clang static-analyzer on a
@@ -64,7 +64,7 @@ def main():
 
     lock = multiprocessing.Lock()
     pool = multiprocessing.Pool(initializer=init, initargs=(lock, args))
-    # Read JSON data into the datastore variable
+    # Read JSON data to the datastore variable
     with open(args.path, "r") as f:
         datastore = json.load(f)
         pool.map(run_analysis, datastore)
