@@ -52,7 +52,7 @@ class CallTree:
 
 	def getParent(self, func):
 		""" Retrieve the last parent of the current node that
-			has the name given by func. If this function is not
+			has the name given by function. If this function is not
 			on a parent, then create it as new child of root
 			@return: A reference to the parent.
 		"""
